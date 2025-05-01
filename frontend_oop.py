@@ -105,7 +105,7 @@ class EveryChord:
         self.app_height = 1080
         self.app_geometry = f"{self.app_width}x{self.app_height}"
         self.app_style = Style()
-        # button styles
+        # button styles todo broken
         self.app_style.configure(
             'EC.TButton',
             font=self.project_font,
@@ -114,14 +114,14 @@ class EveryChord:
 
         self.button_width = 14
 
-        # we must initialize all frames independently first, because the classes depend circularly on each other
+        # we initialize all frames independently first, because they depend circularly on each other
         self.main_menu_frame = Frame(master=self.master)
         self.instrument_preset_frame = Frame(master=self.master)
         self.instrument_creation_frame = Frame(master=self.master)
         self.instrument_preview_window_frame = Frame(master=self.master)
         self.chart_type_selection_frame = Frame(master=self.master)
         self.chord_selection_frame = Frame(master=self.master)
-        # because chords are paginated, we have to initialize these pages as null
+        # because chords are paginated, we have to initialize a container for pages
         self.pages: list[Frame] = list()
         self.fretboard_storage_frame = Frame(master=self.master)
         self.scale_selection_frame = Frame(master=self.master)
